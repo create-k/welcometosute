@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Sample</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!--<header>
+    <h1>kaede website</h1>
+  </header>-->
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <p class="loading-text">本丸へ</p>
+    <div class="spinner">
+      <img class="spin" src="images/Clock.gif" alt="spin">
+    </div>
+  </div>
+  <main>
+    <div class="scroll-container" id="scroll-container">
+      <div class="floor" id="floor">
+      </div>
+      <div class="section1">
+        <div class="image-container">
+          <img src="images/marumado.png" alt="picture">
+          <p class="vertical-text">舞台 刀剣乱舞</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section2">
+        <div class="text-container">
+          <h2>虚伝 燃ゆる本能寺</h2>
+          <p>・天正10年（1582年）<br>・安土桃山時代<br>・本能寺の変</p>
+        </div>
+        <img class="bottom-right-image" src="images/light.png" alt="picture">
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section3">
+        <div class="text-container">
+          <h2>虚伝 燃ゆる本能寺～再演～</h2>
+          <p>・天正10年（1582年）<br>・安土桃山時代<br>・本能寺の変</p>
+          <p>「初演と何かが違う？」</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section4">
+        <div class="text-container">
+          <h2>義伝 暁の独眼竜</h2>
+          <p>・慶長5年（1600年）<br>・安土桃山時代<br>・関ヶ原の戦い</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section5">
+        <div class="text-container">
+          <h2>外伝 此の夜らの小田原</h2>
+          <p>・小田原征伐（天正18年、1590年）前<br>・安土桃山時代</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section6">
+        <div class="text-container">
+          <h2>ジョ伝 三つら星刀語り</h2>
+          <p>・天正18年（1590年）<br>・安土桃山時代<br>・小田原征伐</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section7">
+        <div class="text-container">
+          <h2>悲伝 結いの目の不如帰</h2>
+          <p>・永禄8年（1565年）<br>・室町時代（戦国時代）<br>・永禄の変</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section8">
+        <div class="text-container">
+          <h2>慈伝 日日の葉よ散るらむ</h2>
+          <p>西暦2205年<br>・新たな本丸への引っ越し</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section9">
+        <div class="text-container">
+          <h2>維伝 朧の志士たち</h2>
+          <p>・文久3年（1863年）<br>・江戸時代<br>・文久土佐</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section10">
+        <div class="text-container">
+          <h2>綺伝 いくさ世の徒花 改変 いくさ世の徒花の記憶</h2>
+          <p>・慶長元年（1596年）<br>・安土桃山時代から江戸時代<br>・慶長熊本</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section11">
+        <div class="text-container">
+          <h2>天伝 蒼空の兵 -大坂冬の陣-</h2>
+          <p>・慶長19年（1614年）<br>・江戸時代<br>・大坂冬の陣</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section12">
+        <div class="text-container">
+          <h2>无伝 夕紅の士 -大坂夏の陣-</h2>
+          <p>・慶長19年（1614年）<br>・江戸時代<br>・大坂夏の陣</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section13">
+        <div class="text-container">
+          <h2>綺伝 いくさ世の徒花 </h2>
+          <p>・慶長元年（1596年）<br>・安土桃山時代から江戸時代<br>・慶長熊本</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section14">
+        <div class="text-container">
+          <h2>禺伝 矛盾源氏物語</h2>
+          <p>・平安時代<br>・源氏物語の世界？</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section15">
+        <div class="text-container">
+          <h2>七周年感謝祭 -夢語刀宴會-</h2>
+          <p>・西暦2205年<br>・審神者の夢の中</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section16">
+        <div class="text-container">
+          <h2>山姥切国広 単独行 -日本刀史-</h2>
+          <p>・？？？年<br>・？？時代<br>・？？？</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section17">
+        <div class="text-container">
+          <h2>心伝 つけたり奇譚の走馬灯</h2>
+          <p>・慶応４年７月（1596年）<br>・江戸時代<br>・慶応甲府</p>
+        </div>
+      </div>
+      <div class="door">
+        <img src="images/shoji.png" alt="picture">
+      </div>
+      <div class="section1">
+        <p>© SampleSite / Icons by <a href="https://icons8.com/">icons8.com</a></p>
+      </div>
+
+    </div>
+  </main>
+  <!-- <footer>
+
+  </footer>-->
+</body>
+
+</html>
