@@ -22,18 +22,13 @@ body {
     position: fixed;
     inset: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.loading-text {
-    font-weight: bold;
-    text-align: center;
-}
-
 .spin {
-    width: 50px;
+    width: 100vw;
     height: auto;
 }
 
@@ -160,17 +155,48 @@ body {
     /* クリックイベントを無効化（必要なら追加） */
 }
 
-.section2 {
+.horizontal-text {
+    position: absolute;
+    /* 親要素内で自由に配置 */
+    bottom: -13%;
+    /* 必要に応じて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    /* 必要に応じて調整 */
+    font-weight: bold;
+    color: black;
+    /* 必要に応じて文字色を変更 */
+    text-align: center;
+    /* 中央揃え */
+}
+
+.section2,
+.section3,
+.section4,
+.section5,
+.section6,
+.section7,
+.section8,
+.section9,
+.section10,
+.section11,
+.section12,
+.section13,
+.section14,
+.section15,
+.section16,
+.section17 {
     position: relative;
     /* 子要素の絶対配置を有効にする */
-    background: linear-gradient(to bottom, #9a9a97 400px, #710000);
+    height: calc(100vh - 15vh);
+    /* floor の高さを引いた高さにする */
     display: flex;
-    justify-content: flex-start;
-    /* 左寄せ */
-    align-items: center;
-    /* 縦方向の中央揃え */
-    padding-left: 5%;
-    /* 左余白の調整 */
+    flex-direction: column; /* 内部の要素を縦並びに */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 中央揃え */
+    width: 80%; /* 必要に応じて調整 */
+    height: auto; /* 高さを自動調整 */
     text-align: left;
     /* テキストの左寄せ */
 }
@@ -178,8 +204,7 @@ body {
 .bottom-right-image {
     position: absolute;
     bottom: 0%;
-    /* 下端から0%の余白 */
-    right: 5%;
+    right: 0%;
     /* 右端から5%の余白 */
     width: auto;
     height: 30%;
@@ -190,32 +215,68 @@ body {
 
 .section .text-container {
     display: flex;
-    flex-direction: column;
-    /* 縦に並べる */
-    align-items: flex-start;
-    /* 左寄せ */
-    gap: 10px;
-    /* 見出しと段落の間隔 */
+    justify-content: center; /* 水平方向に中央揃え */
+    width: 90vw; /* 必要に応じて調整 */
 }
 
 .section h2 {
+    margin: 0; /* デフォルトの余白を削除 */
+    font-size: 2rem; /* 必要に応じて調整 */
+    color: #fff; /* テキスト色 */
+}
+
+
+.info-container {
+    display: flex;
+    padding-left: 5%; /* 左余白の調整 */
+    justify-content: center; /* 横方向の中央揃え */
+    gap: 10px; /* 各<p>間の余白 */
+    white-space: nowrap; /* 折り返しを防ぐ */
+}
+
+.info-container p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem; /* 必要に応じて調整 */
+    display: inline-flex; /* 横並びにする */
+    flex-shrink: 0; /* サイズ縮小を防ぐ */
+    width: auto; /* 必要に応じて幅を調整 */
+
+}
+
+.section0 {
+    background: #867152;
+}
+
+.section0 h2 {
     margin: 0;
     /* デフォルトの余白を削除 */
-    font-size: 3rem;
+    margin-bottom: .5em;
+    /* 下だけ余白を追加 */
+    font-size: 2rem;
     /* 必要に応じて調整 */
     color: #fff;
     /* テキスト色 */
 }
 
-.section p {
+.section0 p {
     margin: 0;
     /* デフォルトの余白を削除 */
-    font-size: 1.5rem;
+    margin-bottom: 3em;
+    /* 下だけ余白を追加 */
+    padding-left: 1em;
+    font-size: 1rem;
     /* 必要に応じて調整 */
     color: #fff;
     /* テキスト色 */
+    line-height: 2;
 }
 
+
+
+.section2 {
+    background: linear-gradient(to bottom, #9a9a97 400px, #710000);
+}
 
 .section3 {
     background: linear-gradient(to bottom, #0d5178 400px, #e67b4a);
@@ -238,7 +299,7 @@ body {
 }
 
 .section8 {
-    background: linear-gradient(to bottom, #93c98d 400px, #f9fdf6);
+    background: linear-gradient(to bottom, #93c98d 500px, #f9fdf6);
 }
 
 .section9 {
@@ -246,7 +307,7 @@ body {
 }
 
 .section10 {
-    background: linear-gradient(to bottom, #876aae 400px, #ffffff);
+    background: linear-gradient(to bottom, #876aae 500px, #ffffff);
 }
 
 .section11 {

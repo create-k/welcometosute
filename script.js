@@ -6,14 +6,11 @@ const loading = document.getElementById('loading');
 
 // cssクラスを追加する関数
 function animation(){
-  loading.classList.add('loaded');
+  loading.classList.add('loaded'); 
 }
 
-//画面が読み込まれたら animation を呼び出す
-// window.addEventListener('load', animation);
-
 // 指定秒後に動作させる
-window.setTimeout( animation, 500 );
+window.setTimeout( animation, 2000 );
 
 
 const scrollContainer = document.getElementById('scroll-container');
