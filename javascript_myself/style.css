@@ -1,0 +1,370 @@
+@charset "UTF-8";
+
+.zen-old-mincho-regular {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Zen Old Mincho", serif;
+    overflow: hidden;
+    /* デフォルトのスクロールバーを非表示 */
+}
+
+#loading {
+    transition: all 1s;
+    /*ローディングにかかる時間*/
+    background-color: #FFF;
+    z-index: 999;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.spin {
+    width: 100vw;
+    height: auto;
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100vw;
+    height: 100vh;
+    /*scroll-behavior: smooth; /* スムーズなスクロール */
+}
+
+.scroll-container>div {
+    flex: 0 0 auto;
+    width: 80vw;
+    height: calc(100vh - 15vh);
+    /* floor の高さを引いた高さにする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.scroll-container>.door {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 画像サイズに合わせて親要素を調整 */
+    height: calc(100vh - 15vh);
+    /* section と同じ高さ */
+    width: auto;
+}
+
+.door img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    /* アスペクト比を維持 */
+    height: auto;
+    /* アスペクト比を維持 */
+    object-fit: contain;
+    /* 画像が切れないように調整 */
+}
+
+.scroll-container>.floor {
+    position: fixed;
+    /* 画面に固定 */
+    bottom: 0;
+    /* 常に画面の下に配置 */
+    left: 0;
+    /* 左端に配置 */
+    width: 100%;
+    /* 画面幅いっぱいに表示 */
+    height: 15vh;
+    /* 高さを固定 */
+    display: flex;
+    align-items: center;
+    background-image: url(images/floor1.png);
+    background-repeat: repeat-x;
+    /* X軸方向にリピート */
+    background-size: auto 100%;
+    /* 画像の高さを要素の高さに合わせ、幅を比率維持で自動調整 */
+    background-position: 0 0;
+    /* 背景位置を左上に固定 */
+}
+
+.floor img {
+    /* width: 100vh;    親要素の幅に合わせる */
+    height: 100%;
+    /* アスペクト比を維持 */
+    object-fit: contain;
+}
+
+.section1 {
+    background: #dbb581;
+    display: flex;
+    flex-direction: column; /* 子要素を縦に並べる */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* 子要素の絶対配置を可能に */
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    /* 必要に応じて調整 */
+    height: 80%;
+    /* 必要に応じて調整 */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* 画像が切れないように調整 */
+}
+
+.vertical-text {
+    position: absolute;
+    /* 親要素内で自由に配置可能 */
+    writing-mode: vertical-rl;
+    /* 縦書き */
+    /*text-orientation: upright; /* 縦書きの文字の向きを調整 */
+    font-size: 4rem;
+    /* 必要に応じて調整 */
+    font-weight: bold;
+    color: black;
+    /* 必要に応じて文字色を変更 */
+    text-align: center;
+    /* 中央揃え */
+    line-height: 4rem;
+    /* 行間の調整 */
+    pointer-events: none;
+    /* クリックイベントを無効化（必要なら追加） */
+}
+
+/* ボタンのスタイル */
+.button-container {
+    display: flex;
+    justify-content: center; /* ボタンを中央揃え */
+    gap: 20px; /* ボタン同士の間隔 */
+    margin-bottom: 30px; /* 上下の余白を調整 */
+}
+
+.button12 {
+    background-color: #856232;
+    border: solid 2px #68491f;
+    color: #000;
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-size: .8em;
+    box-shadow: 0 5px 0 #68491f;
+    display: inline-block;
+    transition: .3s;
+}
+
+.button12:hover {
+    color: #fff;
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #68491f;
+}
+
+
+.section2,
+.section3,
+.section4,
+.section5,
+.section6,
+.section7,
+.section8,
+.section9,
+.section10,
+.section11,
+.section12,
+.section13,
+.section14,
+.section15,
+.section16,
+.section17 {
+    position: relative;
+    /* 子要素の絶対配置を有効にする */
+    height: calc(100vh - 15vh);
+    /* floor の高さを引いた高さにする */
+    display: flex;
+    flex-direction: column;
+    /* 内部の要素を縦並びに */
+    justify-content: center;
+    /* 中央揃え */
+    align-items: center;
+    /* 中央揃え */
+    width: 80%;
+    /* 必要に応じて調整 */
+    height: auto;
+    /* 高さを自動調整 */
+    text-align: left;
+    /* テキストの左寄せ */
+}
+
+.bottom-right-image {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    /* 右端から5%の余白 */
+    width: auto;
+    height: 30%;
+    /* 高さを親要素の30%に設定 */
+    object-fit: contain;
+    /* 画像が切れないように調整 */
+}
+
+.section .text-container {
+    display: flex;
+    justify-content: center;
+    /* 水平方向に中央揃え */
+    width: 90vw;
+    /* 必要に応じて調整 */
+}
+
+.section h2 {
+    margin: 0;
+    /* デフォルトの余白を削除 */
+    font-size: 2rem;
+    /* 必要に応じて調整 */
+    color: #fff;
+    /* テキスト色 */
+}
+
+
+.info-container {
+    display: flex;
+    padding-left: 5%;
+    /* 左余白の調整 */
+    justify-content: center;
+    /* 横方向の中央揃え */
+    gap: 10px;
+    /* 各<p>間の余白 */
+    white-space: nowrap;
+    /* 折り返しを防ぐ */
+}
+
+.info-container p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    /* 必要に応じて調整 */
+    display: inline-flex;
+    /* 横並びにする */
+    flex-shrink: 0;
+    /* サイズ縮小を防ぐ */
+    width: auto;
+    /* 必要に応じて幅を調整 */
+
+}
+
+.section0 {
+    background: #867152;
+}
+
+.section0 h2 {
+    margin: 0;
+    /* デフォルトの余白を削除 */
+    margin-bottom: .5em;
+    /* 下だけ余白を追加 */
+    font-size: 2rem;
+    /* 必要に応じて調整 */
+    color: #fff;
+    /* テキスト色 */
+}
+
+.section0 p {
+    margin: 0;
+    /* デフォルトの余白を削除 */
+    margin-bottom: 3em;
+    /* 下だけ余白を追加 */
+    padding-left: 1em;
+    font-size: 1rem;
+    /* 必要に応じて調整 */
+    color: #fff;
+    /* テキスト色 */
+    line-height: 2;
+}
+
+
+
+.section2 {
+    background: linear-gradient(to bottom, #9a9a97 400px, #710000);
+}
+
+.section3 {
+    background: linear-gradient(to bottom, #0d5178 400px, #e67b4a);
+}
+
+.section4 {
+    background: linear-gradient(to bottom, #2a385c 400px, #b69d00);
+}
+
+.section5 {
+    background: linear-gradient(to bottom, #000 400px, #cf3918);
+}
+
+.section6 {
+    background: linear-gradient(to bottom, #253657 400px, #b3cae9);
+}
+
+.section7 {
+    background: linear-gradient(to bottom, #6480af 400px, #fff);
+}
+
+.section8 {
+    background: linear-gradient(to bottom, #93c98d 500px, #f9fdf6);
+}
+
+.section9 {
+    background: linear-gradient(to bottom, #7c1a22 400px, #173229);
+}
+
+.section10 {
+    background: linear-gradient(to bottom, #876aae 500px, #ffffff);
+}
+
+.section11 {
+    background: linear-gradient(to bottom, #0054c9 400px, #deb54a);
+}
+
+.section12 {
+    background: linear-gradient(to bottom, #b22239 400px, #cdccd1);
+}
+
+.section13 {
+    background: linear-gradient(to bottom, #361444 400px, #8363ab);
+}
+
+.section14 {
+    background: linear-gradient(to bottom, #c1386b 400px, #fff);
+}
+
+.section15 {
+    background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+}
+
+.section16 {
+    background: linear-gradient(to bottom, #ba7d4c 400px, #4c606e);
+}
+
+.section17 {
+    background: linear-gradient(to bottom, #00a3af 400px, #c10d1c);
+}
