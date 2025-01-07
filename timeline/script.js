@@ -1,9 +1,10 @@
 const scrollContainer = document.getElementById('scroll-container');
 
-// ホイールイベントをリスン
-scrollContainer.addEventListener('wheel', (event) => {
-  event.preventDefault();  // デフォルトの縦スクロール動作を防止
+// ページ読み込み時に右端にスクロール位置を設定
+scrollContainer.scrollLeft = scrollContainer.scrollWidth;
 
-  // deltaYを使って横スクロールに変換
-  scrollContainer.scrollLeft += event.deltaY * 2;  // スクロール速度を調整
+// ホイールイベントでスクロールを制御
+scrollContainer.addEventListener('wheel', (event) => {
+  event.preventDefault();
+  scrollContainer.scrollLeft -= event.deltaY * 2; // スクロール方向を反転
 });
